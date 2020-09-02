@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Customizer from './components/Customizer';
 import Banner from './components/Banner';
@@ -21,6 +21,24 @@ function App() {
     { name: 'tomato', add: false, price: 1 },
     { name: 'bacon', add: false, price: 2.5 }
   ]);
+
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  useEffect(() => {
+    let copy = [...topping];
+    let total = [];
+    copy.map((val => {
+      let price = 0;
+      if (val.add === true) {
+        total.push(val.price);
+        price = total.reduce(function (a, b) {
+          return a + b;
+        }, 0);
+        setTotalPrice(price);
+      }
+      return price;
+    }));
+  }, [topping]);
 
   const onChange = (param) => {
     let arr = [];
@@ -45,7 +63,7 @@ function App() {
       <Header />
       <Switch>
         <Route path="/customizer">
-          <Customizer topping={topping} onChange={onChange} />
+          <Customizer totalPrice={totalPrice} topping={topping} onChange={onChange} />
         </Route>
         <Route path="/">
           <Banner />

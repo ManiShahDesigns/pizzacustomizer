@@ -8,8 +8,10 @@ img {
 
 body {
     min-height: 100vh;
-    width: 100vw;
     font-family: 'Montserrat', sans-serif;
+    background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 a {
@@ -31,20 +33,37 @@ h1,h2 {
 .home {
     background-image: url('./assets/app-bg.jpg');
     background-size: cover;
-    height: 600px;
+    height: calc(100vh - 63px);
+    width: 100%;
+    position: relative;
+}
+
+.home::after {
+    background-color: rgba(0,0,0,0.25);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    content: '';
 }
 
 .home h1 {
     color: white;
+    font-weight: 700;
+    font-size: 3.5rem;
 }
 
 .home__wrapper {
     margin: auto;
+    z-index: 2;
 }
 
 /* Header */
 .nav {
-    background-color:#1e272e;
+    background: #0F2027; 
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); 
 }
 
 /* Customizer */

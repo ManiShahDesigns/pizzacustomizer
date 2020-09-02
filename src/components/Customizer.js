@@ -5,7 +5,7 @@ import Pizza from './Pizza';
 import Price from './Price';
 import Toppings from './Toppings';
 
-export default function Customizer({ topping, onChange }) {
+export default function Customizer({ topping, onChange, totalPrice }) {
     return (
         <Container className="py-5">
             <Row>
@@ -13,7 +13,7 @@ export default function Customizer({ topping, onChange }) {
                 <Toppings topping={topping} onChange={onChange} />
             </Row>
 
-            <Price topping={topping} />
+            <Price topping={topping} totalPrice={totalPrice} />
         </Container >
     )
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col, Form } from 'react-bootstrap';
 
-export default function Customizer({ topping, onChange }) {
+export default function Customizer({ onChange }) {
     return (
         <Col xs={12} lg={6}>
             <Row className="py-5 py-lg-0">
