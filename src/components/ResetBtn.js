@@ -1,10 +1,12 @@
 import React from 'react'
-import { Button } from 'react-bootstrap'
+import { Button, Col } from 'react-bootstrap'
 
 export default function ResetBtn({ onReset }) {
     return (
-        <Button onClick={onReset}>
-            Reset
+        <Col md={6} className="text-center">
+            <Button onClick={onReset}>
+                Reset
         </Button>
+        </Col>
     )
 }

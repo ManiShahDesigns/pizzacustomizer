@@ -15,7 +15,7 @@ export default function Customizer({ topping, onChange, totalPrice, onReset }) {
                 <Toppings topping={topping} onChange={onChange} />
             </Row>
 
-            <Row className='justify-content-between align-items-center'>
+            <Row className="py-5">
                 <ResetBtn onReset={onReset} />
                 <Price topping={topping} totalPrice={totalPrice} />
             </Row>

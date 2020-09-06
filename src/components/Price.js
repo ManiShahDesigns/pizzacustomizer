@@ -1,11 +1,11 @@
 import React from 'react';
-import { Row } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 
 export default function Price({ totalPrice }) {
 
     return (
-        <Row className="justify-content-center py-5 price">
+        <Col md={6} className="text-center price mt-5 mt-md-0">
             <h2>Total Price: $<span>{totalPrice}</span></h2>
-        </Row>
+        </Col>
     )
 }
