@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row } from 'react-bootstrap';
 
-export default function Customizer({ totalPrice }) {
+export default function Price({ totalPrice }) {
 
     return (
         <Row className="justify-content-center py-5 price">

@@ -12,7 +12,7 @@ import {
 import './App.css';
 
 function App() {
-  const [topping, setTopping] = useState([
+  const initalToppingState = [
     { name: 'cheese', add: false, price: 1.5 },
     { name: 'olive', add: false, price: 1 },
     { name: 'pineapple', add: false, price: 2 },
@@ -20,7 +20,9 @@ function App() {
     { name: 'basil', add: false, price: 1 },
     { name: 'tomato', add: false, price: 1 },
     { name: 'bacon', add: false, price: 2.5 }
-  ]);
+  ]
+
+  const [topping, setTopping] = useState(initalToppingState);
 
   const [totalPrice, setTotalPrice] = useState(0);
 
@@ -58,12 +60,17 @@ function App() {
     setTopping(arr);
   }
 
+  const onReset = () => {
+    setTopping(initalToppingState);
+    setTotalPrice(0)
+  }
+
   return (
     <Router>
       <Header />
       <Switch>
         <Route path="/customizer">
-          <Customizer totalPrice={totalPrice} topping={topping} onChange={onChange} />
+          <Customizer totalPrice={totalPrice} topping={topping} onChange={onChange} onReset={onReset} />
         </Route>
         <Route path="/">
           <Banner />

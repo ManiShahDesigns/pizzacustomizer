@@ -29,9 +29,22 @@ h1,h2 {
     letter-spacing: 0.05em;
 }
 
+input[type='checkbox'] {
+    -webkit-appearance:none;
+    width:20px;
+    height:20px;
+    background:white;
+    border-radius:5px;
+    border:1px solid black;
+}
+
+input[type='checkbox']:checked {
+    background: #0F2027;
+}
+
 /* Home */
 .home {
-    background-image: url('./assets/app-bg.jpg');
+    background-image: url('../src/assets/app-bg.jpg');
     background-size: cover;
     height: calc(100vh - 63px);
     width: 100%;
@@ -87,4 +100,24 @@ h1,h2 {
     opacity: 1;
     transform: translateY(0%);
     transition: 1s all cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+.checkbox__wrapper {
+    background: #D3CCE3;
+    background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);
+    background: linear-gradient(to right, #E9E4F0, #D3CCE3);
+    padding: 2rem;
+}
+
+.checkbox__wrapper .form-group {
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+} 
+
+.checkbox__wrapper .form-group label {
+    padding-left: 1rem;
+} 
+
+.price h2 {
+    color: #D3CCE3;
 }
