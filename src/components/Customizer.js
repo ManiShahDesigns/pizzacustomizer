@@ -4,8 +4,10 @@ import { Container, Row } from 'react-bootstrap';
 import Pizza from './Pizza';
 import Price from './Price';
 import Toppings from './Toppings';
+import ResetBtn from './ResetBtn';
 
-export default function Customizer({ topping, onChange, totalPrice }) {
+
+export default function Customizer({ topping, onChange, totalPrice, onReset }) {
     return (
         <Container className="py-5">
             <Row>
@@ -13,7 +15,10 @@ export default function Customizer({ topping, onChange, totalPrice }) {
                 <Toppings topping={topping} onChange={onChange} />
             </Row>
 
-            <Price topping={topping} totalPrice={totalPrice} />
+            <Row className='justify-content-between align-items-center'>
+                <ResetBtn onReset={onReset} />
+                <Price topping={topping} totalPrice={totalPrice} />
+            </Row>
         </Container >
     )
 }
